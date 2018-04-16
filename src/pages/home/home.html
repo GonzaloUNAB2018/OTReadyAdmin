@@ -1,14 +1,39 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title align="center" >
+      Home Administrador
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+        </ion-col>
+        <ion-col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4>
+          <ion-card><br><br>
+            <ion-title align=center>Ejecutar acción</ion-title><br>
+            <ion-list>
+              <button ion-item (click)="toListaEmpresas()" >
+                Ver listado de empresas
+              </button>
+              <button ion-item (click)="toAgregarEmpleado()">
+                Agregar nuevo empleado
+              </button>
+              <button ion-item>
+                Ver empleados enrolados
+              </button>
+              <button ion-item>
+                Configuración del Sistema
+              </button>
+            </ion-list>
+          </ion-card>
+        </ion-col>
+        <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
 </ion-content>

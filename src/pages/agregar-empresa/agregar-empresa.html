@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title align="center" >Agregar Nueva Empresa en Base de Datos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+        </ion-col>
+        <ion-col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4>
+          <ion-list-header>
+            <ion-title align="center">Ingrese los datos de la empresa</ion-title>
+          </ion-list-header>
+          <ion-list>
+            <ion-item>
+                <ion-label floating>Nombre de la empresa</ion-label>
+                <ion-input type="text" [(ngModel)]="nuevaEmpresa.nombre"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Razón Social de la empresa</ion-label>
+                <ion-input type="text" [(ngModel)]="nuevaEmpresa.razonSocial"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Rol Unico Tributario</ion-label>
+                <ion-input type="text" [(ngModel)]="nuevaEmpresa.rut"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Dirección de la empresa</ion-label>
+                <ion-input type="text" [(ngModel)]="nuevaEmpresa.direccion"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Ciudad de la empresa</ion-label>
+                <ion-input type="text" [(ngModel)]="nuevaEmpresa.ciudad"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Región de la empresa</ion-label>
+                <ion-select [(ngModel)]="nuevaEmpresa.region" >
+                  <ion-option value="15">Región De Arica y Parinacota</ion-option>
+                  <ion-option value="1">Región De Tarapacá</ion-option>
+                  <ion-option value="2">Región De Antofagasta</ion-option>
+                  <ion-option value="3">Región De Atacama</ion-option>
+                  <ion-option value="4">Región De Coquimbo</ion-option>
+                  <ion-option value="5">Región De Valparaíso</ion-option>
+                  <ion-option value="6">Región De Libertador General Bernardo O'Higgins</ion-option>
+                  <ion-option value="7">Región De Maule</ion-option>
+                  <ion-option value="8">Región De BioBio</ion-option>
+                  <ion-option value="9">Región De Araucanía</ion-option>
+                  <ion-option value="14">Región De Los Ríos</ion-option>
+                  <ion-option value="10">Región De Los Lagos</ion-option>
+                  <ion-option value="11">Región De Aysén del General Carlos Ibáñez del Campo</ion-option>
+                  <ion-option value="12">Región De Magallanes y de la Antártica Chilena</ion-option>
+                  <ion-option value="13">Región Metropolitana de Santiago</ion-option>
+                </ion-select>
+              </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+        </ion-col>
+        <ion-col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4>
+          <ion-buttons start>
+            <button ion-button (click)="guardarEmpresa()">Guardar Cambios</button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+</ion-content>

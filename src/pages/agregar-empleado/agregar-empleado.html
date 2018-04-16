@@ -1,0 +1,78 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agregar Nuevo Empleado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+        </ion-col>
+        <ion-col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4>
+          <ion-list-header>
+            <ion-title align="center">Ingrese los datos del nuevo empleado</ion-title>
+          </ion-list-header>
+          <ion-list>
+            <ion-item>
+              <ion-label floating>Nombre de la empresa</ion-label>
+              <ion-input type="text" [(ngModel)]="nuevoEmpleado.empresa"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Primer Nombre</ion-label>
+              <ion-input type="text" [(ngModel)]="nuevoEmpleado.primerNombre"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Segundo Nombre</ion-label>
+              <ion-input type="text" [(ngModel)]="nuevoEmpleado.segundoNombre"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Primer Apellido</ion-label>
+              <ion-input type="text" [(ngModel)]="nuevoEmpleado.primerApellido"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Segundo Apellido</ion-label>
+              <ion-input type="text" [(ngModel)]="nuevoEmpleado.segundoApellido"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>RUT Empleado</ion-label>
+              <ion-input type="text" [(ngModel)]="nuevoEmpleado.rut"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Cargo</ion-label>
+              <ion-input type="text" [(ngModel)]="nuevoEmpleado.cargo"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Perfil</ion-label>
+              <ion-select [(ngModel)]="nuevoEmpleado.perfil">
+                <ion-option value="Gerente">Gerente</ion-option>
+                <ion-option value="Coordinador">Coordinador</ion-option>
+                <ion-option value="Técnico">Técnico / Supervisor</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+        </ion-col>
+        <ion-col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4>
+          <ion-buttons start>
+            <button ion-button (click)="guardarEmpleado()">Guardar Cambios</button>
+          </ion-buttons>
+        </ion-col>
+        <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button icon-only (click)="goAgregarEmpresa()" align="right">
+        <ion-icon name="add" color="dark"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Lista de empresas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+      </ion-col>
+      <ion-col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4>
+        <ion-title align=center>Lista de empresas</ion-title><br>
+        <ion-list>
+          <button ion-item *ngFor="let empresa of empresas">
+            <ion-avatar item-star>
+              {{empresa.nombre}}
+            </ion-avatar>
+            <h2>{{empresa.razonSocial}}</h2>
+          </button>
+        </ion-list>
+      </ion-col>
+      <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
