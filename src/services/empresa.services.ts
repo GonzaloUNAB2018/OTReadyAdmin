@@ -4,12 +4,15 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class EmpresaService{
+
+    empresaData: Observable<any>
     constructor(
         public afDatabase: AngularFireDatabase,
     ){}
 
     empresas: any = { id: null, nombre: null }
     id: any = null;
+    nombre: any = null;
 
     public getEmpresas(){
         return this.afDatabase.list(`Empresas/`);
@@ -20,4 +23,5 @@ export class EmpresaService{
     public createEmpresa(empresa){
         return this.afDatabase.database.ref(`Empresas/`+empresa.id).set(empresa);
     }
+    
 }

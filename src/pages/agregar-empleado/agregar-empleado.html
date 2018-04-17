@@ -19,15 +19,12 @@
           </ion-list-header>
           <ion-list>
             <ion-item>
-              <ion-label floating>Nombre de la empresa</ion-label>
+              <ion-label>Nombre de la empresa</ion-label>
+               
               <ion-select [(ngModel)]="nuevoEmpleado.empresa">
-                <ion-option *ngFor="let empresa of empresas" [value]="empresa.id">
+                <ion-option *ngFor="let empresa of empresas" [value]="empresa.nombre">
                   {{empresa.nombre}}
                 </ion-option>
-                <!--ion-option *ngFor="let empresa of empresas; let i = index" 
-                [value]="{$value: nuevoEmpleado.$value, empresa: nuevoEmpleado.empresa}" selected="false">
-                {{empresas.nombre}}
-              </ion-option--> 
               </ion-select>
 
               <!--ion-input type="text" [(ngModel)]="nuevoEmpleado.empresa"></ion-input-->

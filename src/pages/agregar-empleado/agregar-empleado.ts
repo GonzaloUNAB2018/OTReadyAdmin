@@ -4,6 +4,8 @@ import { Empleado } from '../../models/empleado';
 import { EmpresaService } from '../../services/empresa.services';
 import { Empresa } from '../../models/empresa';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+
 
 
 @IonicPage()
@@ -13,12 +15,12 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class AgregarEmpleadoPage {
 
-  empresas: any = {} as Empresa
-  nuevoEmpleado: any = {} as Empleado;
+  empresaDatos: any = {} as Empresa;
   id: any = null;
-  nombre: any = null;
-  empresaId: any = null;
-
+  empresa: Observable<any>
+  empresas: any = null;
+  nuevoEmpleado: any = {} as Empleado;
+  
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -26,22 +28,27 @@ export class AgregarEmpleadoPage {
     public empresaService: EmpresaService,
     public afDatabase: AngularFireDatabase,
   ) {
-    
 
-    /*Leer lista de empresas
+    //Leer lista de empresas
     this.id = navParams.get('id');
     if(this.id !=0){
-      empresaService.getEmpresas().valueChanges()
-      .subscribe(empresas => {
+      let loader = this.loadingCtrl.create({
+        content: "Cargando datos...",
+        duration: 1500
+      });
+      loader.present();
+      empresaService.getEmpresas().valueChanges().subscribe( empresas => {
         console.log(empresas)
-        this.empresas = empresas
-      })
-    }*/
+        this.empresas = empresas;
+      });
+    }
 
   }
 
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AgregarEmpleadoPage');
+    
+    console.log();
   }
 
   guardarEmpleado(){

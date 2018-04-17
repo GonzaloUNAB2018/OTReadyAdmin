@@ -12,15 +12,6 @@ export class AgregarEmpresaPage {
 
   public currentDate: number;
   nuevaEmpresa: any = {} as Empresa;
-  /*nuevaEmpresa: any = {
-    nombre: null,
-    id: null,
-    direccion: null,
-    razonSocial: null,
-    ciudad: null,
-    region: null,
-    rut: null,
-  }*/
   id: any = null;
 
   constructor(
@@ -50,7 +41,7 @@ export class AgregarEmpresaPage {
     else{
       this.nuevaEmpresa.id = Date.now();
       this.empresaService.createEmpresa(this.nuevaEmpresa);
-      alert('Nueva empresa creada conn éxito');
+      alert('Nueva empresa creada con éxito');
     }
     this.navCtrl.pop();
   }
