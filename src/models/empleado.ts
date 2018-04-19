@@ -7,4 +7,7 @@ export class Empleado {
     rut: string;
     cargo: string;
     perfil: string;
+    empleadoId: string;
+    email: string;
+    password: string;
 }

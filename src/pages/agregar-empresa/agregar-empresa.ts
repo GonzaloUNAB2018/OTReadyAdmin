@@ -22,7 +22,6 @@ export class AgregarEmpresaPage {
   ) {
 
     this.id = navParams.get('id');
-
     if(this.id !=0){
       empresaService.getEmpresas().valueChanges()
       .subscribe(empresa => {

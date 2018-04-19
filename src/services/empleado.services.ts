@@ -1,24 +1,26 @@
 import {Injectable} from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database/database';
-import { Observable } from 'rxjs/Observable';
+
 
 @Injectable()
 export class EmpleadoService{
+
+
     constructor(
         public afDatabase: AngularFireDatabase,
     ){}
 
-    idEmpresa: any = null;
-    empresas: any = { id: null, nombre: null }
-    id: any = null;
+    empleados: any = { empleadoId: null, primerNombre: null }
+    empleadoId: any = null;
+
 
     public getEmpleados(){
-        return this.afDatabase.list(`Empresas/`);
+        return this.afDatabase.list(`Empleados/`);
     }
-    public getEmpleado(id){
-        return this.afDatabase.object(`Empresas/`+id);
+    public getEmpleado(empleadoId){
+        return this.afDatabase.object(`Empleados/`+empleadoId);
     }
-    public createEmpleado(empresa){
-        return this.afDatabase.database.ref(`Empresas/`+empresa.id).set(empresa);
+    public createEmpleado(empleado){
+        return this.afDatabase.database.ref(`Empleados/`+empleado.empleadoId).set(empleado);
     }
 }

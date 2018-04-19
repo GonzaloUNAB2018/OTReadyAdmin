@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-grid>
+        <ion-row>
+          <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+          </ion-col>
+          <ion-col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4>
+            <ion-list-header>
+              <ion-title align="center">Ingrese los datos del nuevo empleado</ion-title>
+            </ion-list-header>
+            <ion-list>
+              <ion-item>
+                <ion-label>Nombre de la empresa</ion-label>
+                <ion-select [(ngModel)]="user.empresa">
+                <ion-option *ngFor="let empresa of empresas" [value]="empresa.nombre">
+                    {{empresa.nombre}}
+                </ion-option>
+                </ion-select>
+                </ion-item>
+                <ion-item>
+                <ion-label floating>Primer Nombre</ion-label>
+                <ion-input type="text" [(ngModel)]="user.primerNombre"></ion-input>
+                </ion-item>
+                <ion-item>
+                <ion-label floating>Primer Apellido</ion-label>
+                <ion-input type="text" [(ngModel)]="user.primerApellido"></ion-input>
+                </ion-item>
+              <ion-item>
+              <ion-label floating>Correo Electrónico</ion-label>
+              <ion-input [(ngModel)]="user.email" type="email" autocorrect="off" autocapitalize="none" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9._%+-]+\.[a-z]{2,3}$" required></ion-input>
+              </ion-item><br>
+              <ion-item>
+                <ion-label floating>Contraseña</ion-label>
+              <ion-input [(ngModel)]="user.password" type="password" name="password" required minlength="6"></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+          <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+          <ion-row>
+            <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+            </ion-col>
+            <ion-col col-12 col-sm-8 col-md-6 col-lg-4 col-xl-4>
+              <ion-buttons start>
+                <button ion-button (click)="signup()">Guardar Cambios</button>
+              </ion-buttons>
+            </ion-col>
+            <ion-col col-sm-2 col-md-3 col-lg-4 col-xl-4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+</ion-content>
+
+<!--ion-content>
+  <form (ngSubmit)="signup()">
+    <ion-list>
+      <ion-item>
+        <ion-icon name="uid" item-left></ion-icon>
+        <ion-label stacked>RUT (sin código verificador)</ion-label>
+        <ion-input formControlName="uid" type="text" placeholder="uid"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="person" item-left></ion-icon>
+        <ion-label stacked>Email:</ion-label>
+        <ion-input formControlName="email" type="text" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="key" item-left></ion-icon>
+        <ion-label stacked>Password:</ion-label>
+        <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button block type="submit">Register</button>
+    </div>
+  </form>
+</ion-content-->

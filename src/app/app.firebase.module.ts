@@ -4,6 +4,5 @@ export const FIREBASE_CONFIG = {
     databaseURL: "https://otready.firebaseio.com",
     projectId: "otready",
     storageBucket: "otready.appspot.com",
-    messagingSenderId: "377997171779"
-
+    messagingSenderId: "377997171779",
 }
